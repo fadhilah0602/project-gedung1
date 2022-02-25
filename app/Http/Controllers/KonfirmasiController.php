@@ -18,7 +18,7 @@ class KonfirmasiController extends Controller
      */
     // class pdf extends TCPDF
 
-    public function print() {
+    public function cetak() {
         $pdf = PDF ::loadview('konfirmasi.cetak')->setPaper('A4','potrait');
         return $pdf->stream();
     }

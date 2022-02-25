@@ -84,9 +84,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <label for="peminjaman_id" >Pilih Ruangan</label>
                       <div>
                       <select name="peminjaman_id" class="form-control">
-                              <option value="">---Pilih Ruangan---</option>
+                              <option value="">---Pilih Tanggal Pelaksanaan---</option>
                               @foreach ($peminjaman as $val)
-                                  <option value="{{ $val ->id }}">{{ $val ->nama_ruang }}</option>
+                                  <option value="{{ $val ->id }}">{{ $val ->tanggal_mulai }}</option>
                               @endforeach
                       </select>
                       </div>
@@ -94,7 +94,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                     <div class=form-group>
                         <label for="keterangan" class=" ">Pesan</label>
-                        <input type="txt" name="pesan" id="pesan" class="form-control" placeholder="Nama Organisasi - Masukkan Pesan">
+                        <input type="txt" name="pesan" id="pesan" class="form-control" placeholder="Masukkan Pesan">
                     </div>
                     <div class=form-group>
                         <button type="submit" class="btn btn-success">Kirim</button>

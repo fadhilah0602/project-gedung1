@@ -99,7 +99,7 @@
           </a>
         </li>
 
-        <li class="nav-item menu-open">
+        {{-- <li class="nav-item menu-open">
           <a href="{{ route('konfirmasi_user.index') }}" class="nav-link ">
             <i class="fas fa-user-check"></i>
             <p>
@@ -107,7 +107,7 @@
               
             </p>
           </a>
-        </li>
+        </li> --}}
     
 
         <li class="nav-item menu-open">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Konfirmasi;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -17,8 +18,12 @@ class KonfirmasiUserController extends Controller
      */
     public function index()
     {
+        $konfirmasi = Konfirmasi::get();
+        $data['konfirmasi'] = $konfirmasi;
+        // return view('konfirmasi.index', $data);
         $user = User::get();
         $data['user'] = $user;
+        // $data = User::where('id')->get();
         return view('konfirmasi_user.index', $data);
     }
 

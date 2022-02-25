@@ -48,19 +48,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <table class="table table-bordered " id="table1">
             <tr>
               <th>No</th>
-              <th>Nama Peminjam</th>
-              <th>Nama Ruang</th>
               <th>Nama Kegiatan</th>
+              <th>Nama Ruang</th>
               <th>Tanggal Pelaksanaan</th>
+              <th>Waktu Pelaksanaan</th>
               <th>Penanggung Jawab</th>
-              <th>Status</th>
               <th>Dokumen</th>
             </tr>
 
             <tbody>
             <?php $no=1;?>
-            @foreach ($konfirmasi as $val)
-            <tr>
+            @foreach ($peminjaman as $val)
+
+            {{-- <tr>
               <td>{{ $no }}</td>
               <td>{{ $val->user_id!=null?$val->user->name:"" }}</td>
               <td>{{ $val->ruang_id!=null?$val->ruang->name:"" }}</td>
@@ -81,8 +81,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     alt="" target="_blank">Download
                 </a> 
               </td>
-            </tr>
-            {{-- <tr>
+            </tr> --}}
+
+            <tr>
               <td>{{ $no }}</td>
               <td>{{ $val->nama_kegiatan }}</td>
               <td>{{ $val->nama_ruang }}</td>
@@ -94,7 +95,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     alt="" target="_blank">Download
                 </a> 
               </td>
-            </tr> --}}
+            </tr>
             <?php $no++ ;?>
             @endforeach
             </tbody>

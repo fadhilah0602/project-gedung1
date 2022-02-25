@@ -19,13 +19,18 @@ class DashboardAdminController extends Controller
      */
     public function index()
     {
-        $peminjaman = Peminjaman::get();
-        $data['peminjaman'] = $peminjaman;
+        // $peminjaman = Peminjaman::get();
+        // $data['peminjaman'] = $peminjaman;
+        $konfirmasi = Konfirmasi::get();
+        $data['konfirmasi'] = $konfirmasi;
 
         $data['jurusan'] = Jurusan::count();
         $data['ormawa'] = Ormawa::count();
         $data['unit'] = Unit::count();
         return view ('dashboard_admin.index', $data);
+
+        
+        // return view('konfirmasi.index', $data);
     }
 
     

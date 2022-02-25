@@ -46,7 +46,7 @@
           <a href="{{ route('dashboard_admin.index') }}" class="nav-link ">
             <i class="fas fa-tachometer-alt"></i>
             <p>
-              Dashboard  
+              Home  
             </p>
           </a>
         </li>
@@ -68,14 +68,14 @@
           </a>
         </li>
 
-        {{-- <li class="nav-item menu-open">
+        <li class="nav-item menu-open">
           <a href="{{ route('permohonan_reservasi.index') }}" class="nav-link ">
             <i class="fas fa-hotel"></i>
             <p>
               Permohonan Reservasi
             </p>
           </a>
-        </li> --}}
+        </li>
 
         {{-- <li class="nav-item menu-open">
           <a href="{{ route('konfirmasi.index') }}" class="nav-link ">
@@ -99,7 +99,7 @@
           <a href="{{ route('konfirmasi.index') }}" class="nav-link ">
             <i class="fas fa-hotel"></i>
             <p>
-              Data Reservasi
+              Konfirmasi
             </p>
           </a>
         </li>

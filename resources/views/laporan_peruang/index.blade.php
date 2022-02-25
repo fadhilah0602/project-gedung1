@@ -48,19 +48,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="form-group">
                 <label for="name" >Pilih Ruangan</label>
                 <div>
-                <select name="name" class="form-control">
+                <select name="ruang_id" class="form-control">
                         <option value="">---Pilih Ruangan---</option>
                         @foreach ($ruang as $val)
                             <option value="{{ $val ->id }}">{{ $val ->name }}</option>
-                            
-                        @endforeach
-                        
+                        @endforeach   
                 </select>
+                {{-- <select name="id" class="form-control">
+                  <option value="">---Pilih Ruangan---</option>
+                  @foreach ($ruang as $val)
+                      <option <?php if ($val == 'ruang_id') {
+                        echo 'selected';
+                      } ?>
+                      value="{{ $val ->id }}">{{ $val ->name }}</option>
+                  @endforeach  
+                </select> --}}
                 </div>
         </div>
         
         <div class=form-group>
-            <button class="btn btn-primary" >View</button>
+            
+            <button  class="btn btn-primary" >View</button>
         </div>
           <table class="table table-bordered " id="table1">
             
@@ -77,23 +85,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <?php $no=1;?>
             
             @foreach ($konfirmasi as $val)
-            @if($val->ruang_id!=null?$val->ruang->id:"")
+            {{-- @if($val->ruang->ruang_id) --}}
             <tr>
               <td>{{ $no }}</td>
-              <td>{{ $val->user_id!=null?$val->user->name:"" }}</td>
-              {{-- <td>{{ $val->ruang_id!=null?$val->ruang->id:"" }}</td> --}}
+              <td>{{ $val->user_id!=null?$val->user->name:"" }}</td> 
+              <td>{{ $val->ruang_id!=null?$val->ruang->name:"" }}</td>
               <td>{{ $val->peminjaman_id!=null?$val->peminjaman->nama_kegiatan:"" }}</td>
               <td>{{ $val->peminjaman_id!=null?$val->peminjaman->tanggal_mulai:"" }}</td>
-              <td>{{ $val->peminjaman_id!=null?$val->peminjaman->pj:"" }}</td>
+              <td>{{ $val->peminjaman_id!=null?$val->peminjaman->pj:"" }}</td> 
               
             </tr>
             <?php $no++ ;?>
-            @endif
+            {{-- @endif --}}
             @endforeach
             
             </tbody>
           </table>
-         
+          
         </div>
       </div>
     </div>

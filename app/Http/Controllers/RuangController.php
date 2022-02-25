@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ruang;
+use Auth;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use PDF;
 
 use Illuminate\Support\Facades\File;
 use App\Http\Controllers\Controller;
@@ -36,6 +38,20 @@ class RuangController extends Controller
         $ruang = Ruang::get();
         $data['ruang'] = $ruang;
         return view('ruang.cetak', $data);
+        // $ruang = Ruang::get();
+        // $data['ruang'] = $ruang;
+        // $pdf = PDF ::loadview('ruang.cetak',$data)->setPaper('A4','potrait');
+        // return $pdf->stream();
+            // public function cetakPdfPenjual(Request $request)
+            // {
+            //     $tgl1 = $request->tgl1;
+            //     $tgl2 = $request->tgl2;
+            //     $data = ShopPayment::where('id_user', Auth::user()->id)->whereBetween('created_at', [$tgl1, $tgl2])->get();
+            //     $pdf = PDF::loadview('shop_payment.viewPenjual',compact('data','tgl2', 'tgl1'))->setpaper('A4','potrait')
+            //     ->setOptions(['defaultFont' => 'sans-serif']);
+                
+            //     return $pdf->stream('Laporan_Transfer_Penjual.pdf'); 
+            // }
     }
 
     /**

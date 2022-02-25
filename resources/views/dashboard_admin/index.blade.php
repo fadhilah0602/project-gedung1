@@ -86,55 +86,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- /.info-box -->
           </div>
           <!-- /.col -->
-          {{-- <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Total</span>
-                <span class="info-box-number">2,000</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div> --}}
-
-          {{-- <div class="content">
-            <div class="card card-info card-outline">
-              <div class="card-header">
-                  <div class="card-tools">
-                      <a href="{{ route('jurusan.create') }}" class="btn btn-success">Tambah Data <i class="fas fa-plus-square"></i></a>
-                  </div>
-              </div>
-      
-              <div class="card-body">
-                <table class="table table-bordered " id="table1">
-                  <tr>
-                    <th>No</th>
-                    <th>Tanggal Pelaksanaan</th>
-                    <th>Nama Peminjam</th>
-                    <th>Nama Kegiatan</th>
-                    <th>Status</th>
-                  </tr>
-      
-                  <tbody>
-                  <?php $no=1;?>
-                  @foreach ($peminjaman as $val)
-                  <tr>
-                    <td>{{ $no }}</td>
-                    <td>{{ $val->tanggal_mulai }}</td>
-                    <td>{{ $val->konfirmasi_id!=null?$val->nama_peminjam->name:"" }}</td>
-                    <td>{{ $val->nama_kegiatan }}</td>
-                    <td>{{ $val->peminjaman_id!=null?$val->konfirmasi->status:"" }}</td>
-                  </tr>
-                  <?php $no++ ;?>
-                  @endforeach
-                  </tbody>
-                </table>
-      
-              </div>
-            </div>
-          </div>--}}
 
           <div class="content">
             <div class="card card-info card-outline">
@@ -145,37 +96,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <table class="table table-bordered " id="table1">
                   <tr>
                     <th>No</th>
-                    <th>Nama Kegiatan</th>
                     <th>Nama Ruang</th>
-                    <th>Tanggal Pelaksanaan</th>
+                    <th>Nama Kegiatan</th>
+                    <th>Nama Peminjam</th>
                     <th>Penanggung Jawab</th>
                   </tr>
       
                   <tbody>
-                  <?php $no=1;?>
-                  @foreach ($peminjaman as $val)
-                  <tr>
-                    <td>{{ $no }}</td>
-                    <td>{{ $val->nama_kegiatan }}</td>
-                    <td>{{ $val->nama_ruang }}</td>
-                    <td>{{ $val->tanggal_mulai }}</td>
-                    <td>{{ $val->pj }}</td>
-                    {{-- <td>
-                      <a href="{{ asset('dokumen/').'/'.$val->dokumen }}" 
-                          alt="" target="_blank">Download
-                      </a> 
-                    </td> --}}
-                    {{-- <td>
-                      <div>
-                        <a href="{{ route('jurusan.edit',['id'=>$val->id]) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                        <a href="{{ route('jurusan.show',['id'=>$val->id]) }}" class="btn btn-warning"><i class="fas fa-eye"></i></a>
-                        <a href="{{ route('jurusan.delete',['id'=>$val->id]) }}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
-                      </div>
-                    </td> --}}
-                  </tr>
-                  <?php $no++ ;?>
-                  @endforeach
-                  </tbody>
+                    <?php $no=1;?>
+                    @foreach ($konfirmasi as $val)
+                    <tr>
+                      <td>{{ $no }}</td>
+                      <td>{{ $val->ruang_id!=null?$val->ruang->name:"" }}</td>
+                      <td>{{ $val->peminjaman_id!=null?$val->peminjaman->nama_kegiatan:"" }}</td>
+                      <td>{{ $val->user_id!=null?$val->user->name:"" }}</td>
+                      {{-- <td>{{ $val->peminjaman_id!=null?$val->peminjaman->tanggal_mulai:"" }}</td> --}}
+                      {{-- <td>{{ $val->peminjaman_id!=null?$val->peminjaman->waktu:"" }}</td> --}}
+                      <td>{{ $val->peminjaman_id!=null?$val->peminjaman->pj:"" }}</td>
+                    </tr>
+                    <?php $no++ ;?>
+                    @endforeach
+                    </tbody>
                 </table>
       
               </div>
@@ -185,7 +126,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     
     <!-- /.content -->
-  </div>
+    </div>
           <!-- /.col -->
         </div>
         <!-- /.row -->

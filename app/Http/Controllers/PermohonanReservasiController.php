@@ -20,10 +20,11 @@ class PermohonanReservasiController extends Controller
     public function index()
     {
         $peminjaman = Peminjaman::get();
-        $user = User::get();
-        $ruang = Ruang::get();
-        $konfirmasi = Konfirmasi::get();
-        $data['konfirmasi'] = $konfirmasi;
+        $data['peminjaman'] = $peminjaman;
+        // $user = User::get();
+        // $ruang = Ruang::get();
+        // $konfirmasi = Konfirmasi::get();
+        // $data['konfirmasi'] = $konfirmasi;
         return view('permohonan_reservasi.index', $data);
     }
 

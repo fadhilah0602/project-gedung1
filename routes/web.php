@@ -71,7 +71,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('konfirmasi/delete/{id}', 'KonfirmasiController@destroy')->name('konfirmasi.delete');
 
     // cetak data 
-    Route::get('ruang/cetakRuang','RuangController@cetakRuang')->name('ruang.cetak');
+    Route::get('konfirmasi/cetak','KonfirmasiController@cetak')->name('konfirmasi.cetak');
 
     Route::get('/user', 'UserController@index')->name('user.index');
     Route::get('user/create', 'UserController@create')->name('user.create');
@@ -123,29 +123,30 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('peminjaman/store', 'PeminjamanController@store')->name('peminjaman.store');
 
     //admin
-    Route::get('/data_reservasi', 'DataReservasiController@index')->name('data_reservasi.index');
-    Route::get('data_reservasi/edit/{id}', 'DataReservasiController@edit')->name('data_reservasi.edit');
-    Route::post('data_reservasi/update/{id}', 'DataReservasiController@update')->name('data_reservasi.update');
+    // Route::get('/data_reservasi', 'DataReservasiController@index')->name('data_reservasi.index');
+    // Route::get('data_reservasi/edit/{id}', 'DataReservasiController@edit')->name('data_reservasi.edit');
+    // Route::post('data_reservasi/update/{id}', 'DataReservasiController@update')->name('data_reservasi.update');
 
     Route::get('/galeri', 'GaleriController@index')->name('galeri.index');
 
     Route::get('/list_reservasi', 'ListReservasiController@index')->name('list_reservasi.index');
 
-    Route::get('/profile', 'ProfileController@index')->name('profile.index');
-    Route::get('profile/create', 'ProfileController@create')->name('profile.edit_profile');
-    Route::post('profile/store', 'ProfileController@store')->name('profile.store');
+    // Route::get('/profile', 'ProfileController@index')->name('profile.index');
+    // Route::get('profile/create', 'ProfileController@create')->name('profile.edit_profile');
+    // Route::post('profile/store', 'ProfileController@store')->name('profile.store');
 
     // Route::get('/jadwal_reservasi','JadwalReservasiController@index')->name('jadwal_reservasi.index');
 
-    Route::get('/data_reservasi', 'DataReservasiController@index')->name('data_reservasi.index');
+    // Route::get('/data_reservasi', 'DataReservasiController@index')->name('data_reservasi.index');
 
     Route::get('/laporan_peruang', 'LaporanPeruangController@index')->name('laporan_peruang.index');
+    Route::get('laporan_peruang/view/{id}', 'LaporanPeruangController@show')->name('laporan_peruang.view');
 
-    Route::get('/lap_periode', 'LaporanPeriodeController@index')->name('laporan.lap_periode');
+    // Route::get('/lap_periode', 'LaporanPeriodeController@index')->name('laporan.lap_periode');
 
     Route::get('/dashboard_admin', 'DashboardAdminController@index')->name('dashboard_admin.index');
 
-    // Route::get('/permohonan_reservasi', 'PermohonanReservasiController@index')->name('permohonan_reservasi.index');
+    Route::get('/permohonan_reservasi', 'PermohonanReservasiController@index')->name('permohonan_reservasi.index');
 
     // konfirmasi admin
     Route::get('/konfirmasi_admin', 'KonfirmasiAdminController@index')->name('konfirmasi_admin.index');

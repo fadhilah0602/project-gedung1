@@ -121,10 +121,24 @@
                       <label for="name" class=" ">Nama Kegiatan</label>
                       <input type="text" id="nama_kegiatan" name="nama_kegiatan" class="form-control" placeholder="Masukkan Nama Kegiatan" >
                   </div>
+                  
                   <div class=form-group>
                     <label for="name" class=" ">Nama Ruang</label>
                     <input type="text" id="nama_ruang" name="nama_ruang" class="form-control" placeholder="Masukkan Nama Ruang" >
-                </div>
+                  </div>
+                  
+                  {{-- <div class="form-group">
+                    <label for="ruang_id" >Pilih Ruangan</label>
+                    <div>
+                    <select name="ruang_id" class="form-control">
+                            <option value="">---Pilih Ruangan---</option>
+                            @foreach ($ruang as $val)
+                                <option value="{{ $val ->id }}">{{ $val ->name }}</option>
+                            @endforeach
+                    </select>
+                    </div>
+                  </div> --}}
+
                   <div class=form-group>
                       <label for="images" class=" ">Tanggal Pelaksanaan</label>
                       <input type="date" id="tanggal_mulai" name="tanggal_mulai" class="form-control" placeholder="Masukkan Tanggal Pelaksanaan" >

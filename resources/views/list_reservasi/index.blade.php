@@ -42,6 +42,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="card card-info card-outline">
         <div class="card-header">
+          <div class="card-tools">
+            {{-- @if($val->status =='accept')
+            <a href="{{ route('konfirmasi.cetak') }}" class="btn btn-primary">Cetak <i class="fas fa-plus-print"></i></a>
+            @endif --}}
+          </div>
         </div>
 
         <div class="card-body">
@@ -55,7 +60,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <th>Waktu</th>
               <th>Penanggung Jawab</th>
               <th>Status</th>
-              <th>Aksi</th>
             </tr>
 
             <tbody>
@@ -71,6 +75,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <td>{{ $val->peminjaman_id!=null?$val->peminjaman->pj:"" }}</td>
               @if($val->status =='accept')
                 <td><button type="button" class="btn btn-success">{{ $val->status }}</button></td>
+                <td><a href="{{ route('konfirmasi.cetak') }}" class="btn btn-primary">Cetak <i class="fas fa-plus-print"></i></a></td>
               @endif
               @if($val->status =='pending')
                 <td><button type="button" class="btn btn-warning">{{ $val->status }}</button></td>

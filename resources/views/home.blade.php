@@ -29,7 +29,7 @@
     @if(Auth::check())
     @switch(Auth::user()->role->nama)
         @case('admin')
-            @include('beranda')
+            @include('dashboard_admin')
             @break
         @case('group_user')
             @include('dashboard-user')

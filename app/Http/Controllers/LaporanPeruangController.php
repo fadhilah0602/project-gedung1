@@ -7,6 +7,7 @@ use App\Peminjaman;
 use App\Ruang;
 use App\User;
 use App\Konfirmasi;
+use Auth;
 
 class LaporanPeruangController extends Controller
 {
@@ -17,14 +18,35 @@ class LaporanPeruangController extends Controller
      */
     public function index()
     {
-        $peminjaman = Peminjaman::get();
-        $user = User::get();
-        $ruang = Ruang::get('name');
+        // $peminjaman = Peminjaman::get();
+        // $data['peminjaman'] = $peminjaman;
+        // $user = User::get();
+        // $data['user'] = $user;
+        $ruang = Ruang::get();
         $data['ruang'] = $ruang;
+        //     $data = ShopPayment::where('id_user', Auth::user()->id)->whereBetween('created_at', [$tgl1, $tgl2])->get();
         $konfirmasi = Konfirmasi::get();
         $data['konfirmasi'] = $konfirmasi;
         return view('laporan_peruang.index', $data);
     }
+
+    public function view($id)
+    {
+        // $peminjaman = Peminjaman::get();
+        // $data['peminjaman'] = $peminjaman;
+        // $user = User::get();
+        // $data['user'] = $user;
+        // $ruang = Ruang::get();
+        // $data['ruang'] = $ruang;
+        $konfirmasi = Konfirmasi::get()->where('ruang_id');
+        $data['konfirmasi'] = $konfirmasi;
+        return view('laporan_peruang.index', $data);
+
+        // $ruang = Ruang::findOrFail($id);
+        // $data['ruang'] = $ruang;
+        // return view("ruang.view", $data);
+    }
+
 
     /**
      * Show the form for creating a new resource.

@@ -126,6 +126,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div>
           <div>
             <h2><strong>AULA GEDUNG MESIN</strong></h2>
+            {{-- @if
+              $nama_ruang = Aula Gedung Mesin;
+            @endif --}}
           </div>
           <tr>
             <td><strong> LOKASI</strong> </td>
@@ -152,7 +155,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
           <div class="card-tools">
             <a href="{{ route('peminjaman.create') }}" class="btn btn-success">Booking </a>
-        </div>
+          </div>
         </div>
         
       </div>

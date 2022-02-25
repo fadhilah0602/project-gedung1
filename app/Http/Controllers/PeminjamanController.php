@@ -16,6 +16,8 @@ class PeminjamanController extends Controller
      */
     public function index()
     {
+        // $konfirmasi = Konfirmasi::get();
+        // $data['konfirmasi'] = $konfirmasi;
         $peminjaman = Peminjaman::get();
         $data['peminjaman'] = $peminjaman;
         return view('peminjaman.index', $data);
